@@ -1,0 +1,168 @@
+/* FloraScan AI - Clinical Botanical Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+  --surface: #eaffed;
+  --surface-dim: #cbdfce;
+  --surface-bright: #eaffed;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #e4f9e8;
+  --surface-container: #dff3e2;
+  --surface-container-high: #d9eddc;
+  --surface-container-highest: #d3e8d7;
+  --on-surface: #0e1f15;
+  --on-surface-variant: #40493d;
+  --inverse-surface: #233429;
+  --inverse-on-surface: #e2f6e5;
+  --outline: #707a6c;
+  --outline-variant: #bfcaba;
+  --primary: #0d631b;
+  --primary-container: #2e7d32;
+  --on-primary: #ffffff;
+  --secondary: #126d27;
+  --secondary-container: #9cf49c;
+  --tertiary: #00569f;
+  --tertiary-container: #006eca;
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+}
+
+/* Base resets & typography */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar for modern feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* Scanning laser animation */
+@keyframes scanSweep {
+  0% {
+    top: 0%;
+    opacity: 0.9;
+  }
+  50% {
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.9;
+  }
+}
+
+.scan-laser-active {
+  animation: scanSweep 2.4s ease-in-out infinite;
+  box-shadow: 0 0 16px rgba(0, 86, 159, 0.8), 0 0 32px rgba(46, 125, 50, 0.4);
+}
+
+/* Reticle pulsing animation */
+@keyframes reticlePulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.reticle-pulse {
+  animation: reticlePulse 3s ease-in-out infinite;
+}
+
+/* Toast container */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 280px;
+  max-width: 420px;
+  background: #ffffff;
+  color: var(--on-surface);
+  border: 1px solid var(--surface-container-high);
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 10px 25px -5px rgba(24, 59, 31, 0.12), 0 8px 10px -6px rgba(24, 59, 31, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Print styling for Agronomy PDF report */
+@media print {
+  header, footer, #toast-container, .no-print, button:not(.print-keep) {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 20px;
+  }
+  .print-page-break {
+    page-break-before: always;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+}
+
+/* Coordinate axes styling for Paper Patch Subplot */
+.patch-canvas-container {
+  position: relative;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.axis-tick-label {
+  font-family: monospace;
+  font-size: 10px;
+  color: #666;
+}
