@@ -29,31 +29,31 @@ The proposed system aims to assist in identifying plant diseases automatically f
 
 <!-- Add a screenshot of the website's Home page at images/home-screen.png. -->
 
-![Home Screen](images/home-screen.png)
+![Home Screen](<img width="1897" height="912" alt="image" src="https://github.com/user-attachments/assets/36f27d13-03d9-4830-99c3-5ce808585efa" />
+)
 
-### 2.2 Login / Registration Screen
 
-<!-- Add a screenshot of the Login/Register page at images/login-screen.png. -->
-
-![Login / Registration Screen](images/login-screen.png)
 
 ### 2.3 Scan / Upload Screen
 
 <!-- Add a screenshot showing a user selecting a plant leaf image at images/scan-screen.png. -->
 
-![Scan Screen](images/scan-screen.png)
+![Scan Screen](<img width="1901" height="908" alt="image" src="https://github.com/user-attachments/assets/28ae77b4-9def-4264-b410-a83a3e2e849c" />
+)
 
 ### 2.4 Result Screen
 
 <!-- Add a screenshot of the disease prediction/result page at images/result-screen.png. -->
 
-![Result Screen](images/result-screen.png)
+![Result Screen](<img width="1901" height="907" alt="image" src="https://github.com/user-attachments/assets/1009c469-14b1-4457-80e1-08b53e78811e" />
+)
 
 ### 2.5 History Screen
 
 <!-- Add a screenshot of the scan history page at images/history-screen.png. -->
 
-![History Screen](images/history-screen.png)
+![History Screen](<img width="1901" height="912" alt="image" src="https://github.com/user-attachments/assets/cd9d976e-97dc-46d5-8408-9cbd0d3d3f4e" />
+)
 
 ## 3. Tech Stack
 
